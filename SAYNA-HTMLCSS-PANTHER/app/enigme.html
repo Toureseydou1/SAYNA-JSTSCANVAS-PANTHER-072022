@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENIGME</title> <!-- Modifié pour afficher uniquement "ENIGME" dans la barre de titre -->
+    <link rel="stylesheet" href="./css/enigme.css">
+</head>
+
+<body>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-popup">&times;</span>
+            <p id="popup-message"></p>
+            <button class="popup-button" id="next-button">Énigme Suivante</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="h-img">
+            <img class="fade-in-slide" src="./assets/Illustrations+Logo/All-pages/footer2.png" alt="">
+        </div>
+        <nav class="h-nav">
+            <ul>
+                <li><a href="../index.html">ACCUEIL</a></li>
+                <li><a href="./wakanda.html">WAKANDA</a></li>
+                <li><a href="./enigme.html">ENIGME</a></li> <!-- "ENIGME" ici reste inchangé -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="traits" id="floating-container">
+            <div class="purple-stripes">
+                <div class="trait" id="trait-1"></div>
+                <div class="trait" id="trait-2"></div>
+            </div>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank">
+                    <img src="assets/Illustrations+Logo/All-pages/icon_facebook.png" alt="Facebook">
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="assets/Illustrations+Logo/All-pages/icon_instagram.png" alt="Instagram">
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <img src="assets/Illustrations+Logo/All-pages/icon_twitter.png" alt="Twitter">
+                </a>
+                <a href="https://tiktok.com" target="_blank">
+                    <img src="assets/Illustrations+Logo/All-pages/icon_tiktok.png" alt="TikTok">
+                </a>
+            </div>
+        </div>
+
+        <section class="sec-1">
+            <img class="fade-in-slide" src="./assets/Illustrations+Logo/Enigme/Pantherenigme1.png" alt="">
+            <article class="sec1-r">
+                <h2 class="fade-in-slide">Releve le défi des Dora Milaje</h2>
+                <div class="quot">
+                    <div class="succes">
+                        <p class="citation fade-in-slide">
+                            Les Dora Milaje sont de farouches guerrières d’élite. Elles constituent la garde rapprochée du Roi en personne et ont de nombreuses occasions de lui sauver la vie. Leur Générale, Okoyé est également la dirigeante des forces armées et des renseignements wakandais.
+                        </p>
+                        <p class="citation fade-in-slide">
+                            La réussite de cette évaluation ne dépend pas de la chance mais bel et bien de l’entrainement que tu as suivi jusqu’ici ainsi que de ta détermination. Relève ce défi et montre-nous que tu es capable de porter les valeurs du Black Panther et du Wakanda!
+                        </p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img class="fade-in-slide foie" src="assets/Illustrations+Logo/Enigme/Pantherenigme0.png" alt="">
+                </div>
+            </article>
+        </section>
+
+        <section class="sec2">
+            <div id="enigme-container"></div>
+            <div id="answer-container" style="display: none;">
+                <p id="answer" class="response-text"></p>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer>
+        <div class="f-container">
+            <article class="f-left">
+                <div class="f-logo">
+                    <img class="fade-in-slide" src="./assets/Illustrations+Logo/All-pages/footer2.png" alt="">
+                </div>
+            </article>
+            <article class="f-right">
+                <div class="f-right-top">
+                    <div class="pages">
+                        <h3 class="text fade-in-slide">PAGES</h3>
+                        <div class="link"><a href="#"><span>à</span> propos</a></div>
+                        <div class="link"><a href="#">Wakanda</a></div>
+                    </div>
+                    <div class="retrouvez-nous">
+                        <h3 class="text fade-in-slide">RETROUVEZ NOUS</h3>
+                        <div class="img fade-in-slide">
+                            <img id="fb" src="./assets/Illustrations+Logo/All-pages/footer3.png" alt="">
+                            <img id="inst" src="./assets/Illustrations+Logo/All-pages/footer4.png" alt="">
+                            <img id="tw" src="./assets/Illustrations+Logo/All-pages/footer5.png" alt="">
+                            <img id="tk" src="./assets/Illustrations+Logo/All-pages/footer6.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="f-r-bottom">
+                    <p>2022 Tous droits réservés <span>.</span> Politique de confidentialité <span>.</span> Conditions d’utilisation</p>
+                </div>
+            </article>
+        </div>
+    </footer>
+
+    <script src="JS/enigme.js"></script>
+</body>
+
+</html>

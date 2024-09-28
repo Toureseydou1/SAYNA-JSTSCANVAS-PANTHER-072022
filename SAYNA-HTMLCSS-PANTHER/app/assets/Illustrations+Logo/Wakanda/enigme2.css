@@ -1,0 +1,591 @@
+@charset "UTF-8";
+@font-face {
+  font-family: panthera;
+  src: url("../assets/fonts/panthera.otf") format("opentype");
+}
+@font-face {
+  font-family: beyno;
+  src: url("../assets/fonts/BEYNO.otf") format("opentype");
+}
+@font-face {
+  font-family: wakanda;
+  src: url("../assets/fonts/WakandaForever-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: cantarell;
+  src: url("../assets/fonts/Cantarell-Regular.ttf") format("truetype");
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
+}
+
+*::selection {
+  background-color: #9e91b7;
+  color: #021740;
+}
+
+*::-webkit-scrollbar {
+  height: 0.2rem;
+  width: 0.3rem;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #9e91b7;
+  border-radius: 1rem;
+}
+
+body {
+  background-image: url("../assets/Illustrations+Logo/All-pages/arrière_plan.png");
+}
+/* Styles pour la Popup Box */
+.popup {
+  display: none; /* Caché par défaut */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+  max-width: 400px;
+  width: 90%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popup-button {
+  background-color: #021740;
+  color: #f2cef2;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.popup-button:hover {
+  background-color: #9e91b7;
+}
+
+/*Styles partie en-tête*/
+header {
+  background-image: url("../assets/Illustrations+Logo/All-pages/arrière_plan.png");
+  top: 0;
+  z-index: 1000;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+}
+header nav.h-nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+header nav.h-nav ul li {
+  padding: 0.4rem 0.4rem;
+  margin: 0 0.4rem;
+}
+header nav.h-nav ul li a {
+  text-decoration: none;
+  font-family: beyno;
+  color: #ffffff;
+  font-size: 16px;
+}
+header nav.h-nav ul li a:hover {
+  color: #9e91b7;
+  transition: color 0.3s ease-out;
+  text-decoration: underline;
+}
+header nav.h-nav ul li a#enigme {
+  color: #9e91b7;
+  text-decoration: underline;
+}
+#floating-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0; /* Assure que le conteneur est aligné à gauche */
+  transform: translate(50%, -30%);
+  z-index: 10000;
+  margin: 0 0 0 20px;
+}
+
+.purple-stripes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trait {
+  width: 2px;
+  background-color: #9e91b7;
+  position: absolute;
+}
+
+#trait-1 {
+  height: 75vh;
+  top: 0;
+  left: 0; /* Positionne le trait à gauche */
+}
+
+#trait-2 {
+  height: 55vh;
+  top: 0;
+  left: 20px; /* Ajuste la position du second trait */
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 18px; /* Ajoute un espace à gauche pour séparer les logos des traits */
+}
+
+.social-icons a {
+  display: block;
+  margin: 5px 0;
+}
+
+.social-icons img {
+  margin: 5px 0;
+}
+
+/* Style menu  */
+/* Partie sec 1 */
+section.sec-1 {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  padding: 0 0 1rem 0;
+}
+section.sec-1 img {
+  width: 40%;
+  height: 120vh;
+  transform: translate(10%, -20%);
+}
+section.sec-1 article.sec1-r {
+  padding: 0;
+  padding-top: 5rem;
+  width: 60%;
+}
+section.sec-1 article.sec1-r h2 {
+  width: 42%;
+  font-family: beyno;
+  font-size: 36px;
+  color: #9e91b7;
+  text-align: justify;
+  transform: translateX(-5%);
+  margin-bottom: 1rem;
+}
+section.sec-1 article.sec1-r div.quot {
+  transform: translateX(-10%);
+  height: 500px;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 0;
+  background-image: url("../assets/Illustrations+Logo/Enigme/Pantherenigme2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.sec-1 article.sec1-r div.quot P.citation {
+  width: 55%;
+  text-align: justify;
+  color: #ffffff;
+  font-family: cantarell;
+  font-size: 14px;
+  margin: 5px 100px; /* Pas d'espace entre les paragraphes */
+  line-height: 1.2; /* Ajuste la hauteur de ligne pour le rendu */
+}
+article.sec1-r img {
+  width: 20px;
+  height: auto;
+  display: block; /* Assure que l'image est un bloc */
+  margin: 0 auto; /* Centre l'image horizontalement */
+  max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de son conteneur */
+  height: auto; /* Maintient les proportions de l'image */
+}
+.image-container {
+  margin-top: -165px; /* Ajuste pour créer un espacement entre le texte et l'image */
+  margin-left: -360px;
+}
+/* Animation fade in avec slide */
+.fade-in-slide {
+  opacity: 0;
+  transform: translateX(-30%);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-slide.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+/* Partie sec 2 */
+section.sec2 {
+  padding: 1.5rem 1rem 2rem 8rem;
+  width: 100%;
+}
+section.sec2 h2.text-enigme {
+  font-size: 43px;
+  font-family: wakanda;
+  color: #9e91b7;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+h1.sec7 {
+  font-size: 43px;
+  color: #9e91b7;
+  font-family: beyno;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+.sec8 {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 4rem;
+  display: flex;
+  text-align: center;
+  
+  
+}
+
+section.sec2 article {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.sec2 article div.sec2-b {
+  font-family: cantarell;
+  font-size: 14px;
+  width: 50%;
+  color: #ffffff;
+}
+section.sec2 article div.sec2-b p {
+  width: 100%;
+  line-height: 130%;
+  margin-bottom: 5rem;
+}
+section.sec2 article div.sec2-b p span.text-enigme {
+  font-family: wakanda;
+}
+section.sec2 article div.sec2-b form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+section.sec2 article div.sec2-b form label {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+section.sec2 article div.sec2-b form input[type=text] {
+  margin: 0.5rem 0 2.5rem 0;
+  width: 100%;
+  height: 2rem;
+  border: 1px solid #f2cef2;
+  padding: 0.3rem 1rem;
+  background-color: inherit;
+  color: #f2cef2;
+  border-radius: 2rem;
+}
+section.sec2 article div.sec2-b form input[type=text]::placeholder {
+  color: #f2cef2;
+}
+section.sec2 article div.sec2-b form button[type=submit] {
+  color: #021740;
+  background-color: #f2cef2;
+  margin: auto;
+  width: 6.5rem;
+  height: 2.3rem;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+section.sec2 article div.sec2-b form button[type=submit]:hover {
+  color: #f2cef2;
+  background-color: #021740;
+  border: 1px solid #f2cef2;
+  transition: 0.5s ease-out;
+}
+section.sec2 article div.sec2-r {
+  font-size: 12px;
+  font-family: cantarell;
+  color: #ffffff;
+  width: 50%;
+}
+section.sec2 article div.sec2-r div.quot {
+  background-image: url("../assets/Illustrations+Logo/Enigme/Pantherenigme2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 280px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+section.sec2 article div.sec2-r div.quot p {
+  transform: translateY(-24%);
+  width: 90%;
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  background-image: url("../assets/Illustrations+Logo/All-pages/back_footer.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+footer div.f-container {
+  color: #ffffff;
+  font-family: cantarell;
+  font-size: 14px;
+  width: 70%;
+  margin: auto;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer div.f-container h3 {
+  font-size: 22px;
+  letter-spacing: 28%;
+  margin-bottom: 2rem;
+}
+footer div.f-container article.f-left {
+  width: 30%;
+}
+footer div.f-container article.f-left div.f-logo {
+  width: 80%;
+  background-image: url("../assets/Illustrations+Logo/All-pages/footer1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42vh;
+}
+footer div.f-container article.f-right {
+  width: 65%;
+}
+footer div.f-container article.f-right div.f-right-top {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+footer div.f-container article.f-right div.f-right-top div.pages {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer div.f-container article.f-right div.f-right-top div.pages div.link {
+  margin: 10px 0;
+}
+footer div.f-container article.f-right div.f-right-top div.pages div.link a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+footer div.f-container article.f-right div.f-right-top div.pages div.link a span {
+  margin-right: 2px;
+}
+footer div.f-container article.f-right div.f-right-top div.retrouvez-nous {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+footer div.f-container article.f-right div.f-right-top div.retrouvez-nous div.img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+}
+footer div.f-container article.f-right div.f-r-bottom {
+  display: flex;
+  align-items: center;
+}
+footer div.f-container article.f-right div.f-r-bottom p span {
+  background-color: #f2cef2;
+  color: #f2cef2;
+  font-size: 8px;
+  border-radius: 100%;
+  padding: 1px;
+  margin: 0 4px;
+}
+
+/*# sourceMappingURL=enigme.css.map */
